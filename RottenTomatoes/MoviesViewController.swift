@@ -96,11 +96,15 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
 
         let movie = movies![indexPath.row]
         
-        cell.textLabel?.text = movie["title"] as? String
+        cell.titleLabel.text = movie["title"] as? String
+        
+        cell.synopsisLabel.text = movie["synopsis"] as? String
+        
+        //cell.textLabel?.text = movie["title"] as? String
         
         return cell
     }

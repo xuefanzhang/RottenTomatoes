@@ -14,6 +14,7 @@
 		DA5A219E1BAEF46F00918190 /* RottenTomatoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A219D1BAEF46F00918190 /* RottenTomatoesTests.swift */; };
 		DA5A21A91BAEF46F00918190 /* RottenTomatoesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A21A81BAEF46F00918190 /* RottenTomatoesUITests.swift */; };
 		DA5A21B71BAEF4CF00918190 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A21B61BAEF4CF00918190 /* MoviesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DA5A21BB1BAEFD2E00918190 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A21BA1BAEFD2E00918190 /* MovieCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DA5A21A81BAEF46F00918190 /* RottenTomatoesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RottenTomatoesUITests.swift; sourceTree = "<group>"; };
 		DA5A21AA1BAEF46F00918190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA5A21B61BAEF4CF00918190 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		DA5A21BA1BAEFD2E00918190 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		DA5A21871BAEF46F00918190 /* RottenTomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				DA5A21B91BAEFCDB00918190 /* Views */,
 				DA5A21B81BAEF4D300918190 /* ViewControllers */,
 				DA5A21881BAEF46F00918190 /* AppDelegate.swift */,
 				DA5A218C1BAEF46F00918190 /* Main.storyboard */,
@@ -131,6 +134,14 @@
 				DA5A21B61BAEF4CF00918190 /* MoviesViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DA5A21B91BAEFCDB00918190 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA5A21BA1BAEFD2E00918190 /* MovieCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 			files = (
 				DA5A21891BAEF46F00918190 /* AppDelegate.swift in Sources */,
 				DA5A21B71BAEF4CF00918190 /* MoviesViewController.swift in Sources */,
+				DA5A21BB1BAEFD2E00918190 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
