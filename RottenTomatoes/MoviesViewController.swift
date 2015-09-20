@@ -22,61 +22,40 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
-
+        
+        refreshMovies()
+    }
+    
+    func refreshMovies(){
         let url = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")!
         
-        
-        
         let task = NSURLSession.sharedSession().dataTaskWithRequest(
-            
             NSURLRequest(URL: url),
-            
             completionHandler: {
-                
                 (data, response, error) -> Void in
                 
                 if let data = data {
-                    
                     // Sending the results back to main queue to update UI using the fetched data
-                    
                     dispatch_async(dispatch_get_main_queue()) {
-                        
                         do {
-                            
                             if let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)) as? NSDictionary {
-                                
                                 // extract movies from JSON here and assign it to class variable
-                                
                                 self.movies = json["movies"] as? [NSDictionary]
-                                
                                 self.tableView.reloadData()
-                                
                             }
-                            
-                            
-                            
+                            self.refreshControl.endRefreshing()
                         } catch {
-                            
                             print("Could not unwrap JSON. DOH!")
-                            
                         }
-                        
                     }
-                    
-                    
-                    
                 } else if let error = error {
-                    
                     print(error.description)
-                    
                 }
-                
         })
         
         task.resume()
         tableView.dataSource = self
         tableView.delegate = self
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -144,9 +123,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func onRefresh() {
-        delay(2, closure: {
-            self.refreshControl.endRefreshing()
-        })
+        refreshMovies()
     }
     
 
