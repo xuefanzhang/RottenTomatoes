@@ -45,8 +45,6 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                 
                                 self.tableView.reloadData()
                                 
-                                print(json)
-                                
                             }
                             
                             
@@ -104,7 +102,8 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.synopsisLabel.text = movie["synopsis"] as? String
         
-        //cell.textLabel?.text = movie["title"] as? String
+        let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
+        cell.posterView.setImageWithURL(url)
         
         return cell
     }
