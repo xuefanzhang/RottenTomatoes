@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0BA8197EEF71AB141AF0D7AA /* libPods-RottenTomatoes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F18B6E1F4E8A2264CD4DAC10 /* libPods-RottenTomatoes.a */; };
+		DA4B25101BAF172500838FA1 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B250F1BAF172500838FA1 /* MovieDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DA5A21891BAEF46F00918190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A21881BAEF46F00918190 /* AppDelegate.swift */; };
 		DA5A218E1BAEF46F00918190 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5A218C1BAEF46F00918190 /* Main.storyboard */; };
 		DA5A21901BAEF46F00918190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA5A218F1BAEF46F00918190 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		0F345238B18DFFA0A29D1CD1 /* Pods-RottenTomatoes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenTomatoes.release.xcconfig"; path = "Pods/Target Support Files/Pods-RottenTomatoes/Pods-RottenTomatoes.release.xcconfig"; sourceTree = "<group>"; };
 		A6028A070DFBEEB9CB8A8C0E /* Pods-RottenTomatoes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenTomatoes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RottenTomatoes/Pods-RottenTomatoes.debug.xcconfig"; sourceTree = "<group>"; };
+		DA4B250F1BAF172500838FA1 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		DA5A21851BAEF46F00918190 /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5A21881BAEF46F00918190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA5A218D1BAEF46F00918190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				DA5A21B61BAEF4CF00918190 /* MoviesViewController.swift */,
+				DA4B250F1BAF172500838FA1 /* MovieDetailsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA4B25101BAF172500838FA1 /* MovieDetailsViewController.swift in Sources */,
 				DA5A21891BAEF46F00918190 /* AppDelegate.swift in Sources */,
 				DA5A21B71BAEF4CF00918190 /* MoviesViewController.swift in Sources */,
 				DA5A21BB1BAEFD2E00918190 /* MovieCell.swift in Sources */,
