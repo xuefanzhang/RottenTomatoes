@@ -24,10 +24,24 @@ class MovieDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        var urlString = movie.valueForKeyPath("posters.thumbnail") as! String
+        let url = NSURL(string: urlString)!
+        
+        var lowResImageView: UIImageView = UIImageView()
+        lowResImageView.setImageWithURL(url)
+        
+        var range = urlString.rangeOfString(".*cloudfront.net/", options: .RegularExpressionSearch)
+        if let range = range {
+            urlString = urlString.stringByReplacingCharactersInRange(range, withString: "https://content6.flixster.com/")
+        }
+        
+        imageView.setImageWithURL(NSURL(string: urlString)!, placeholderImage: lowResImageView.image)
+        
+        //imageView.setImageWithURL(url)
+        
         titleLabel.text = movie["title"] as? String
         synopsisLabel.text = movie["synopsis"] as? String
-        let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
-        imageView.setImageWithURL(url)
+        
     }
 
     override func didReceiveMemoryWarning() {

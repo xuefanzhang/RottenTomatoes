@@ -14,10 +14,14 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var networkErrorLabel: UILabel!
+    
     var movies: [NSDictionary]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SVProgressHUD.show()
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
@@ -34,7 +38,12 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             completionHandler: {
                 (data, response, error) -> Void in
                 
-                if let data = data {
+                if (error != nil) {
+                    self.networkErrorLabel.hidden = false
+                    self.networkErrorLabel.text = "Network Error!"
+                    SVProgressHUD.dismiss()
+                } else if let data = data {
+                    self.networkErrorLabel.hidden = true
                     // Sending the results back to main queue to update UI using the fetched data
                     dispatch_async(dispatch_get_main_queue()) {
                         do {
@@ -44,13 +53,13 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                 self.tableView.reloadData()
                             }
                             self.refreshControl.endRefreshing()
+                            SVProgressHUD.dismiss()
                         } catch {
                             print("Could not unwrap JSON. DOH!")
                         }
                     }
-                } else if let error = error {
-                    print(error.description)
                 }
+                
         })
         
         task.resume()
@@ -125,6 +134,5 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func onRefresh() {
         refreshMovies()
     }
-    
 
 }
