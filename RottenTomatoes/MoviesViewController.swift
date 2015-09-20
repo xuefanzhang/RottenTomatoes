@@ -9,13 +9,19 @@
 import UIKit
 
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var movies: [NSDictionary]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
 
         let url = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")!
         
@@ -126,6 +132,21 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let movieDetailsViewController = segue.destinationViewController as! MovieDetailsViewController
         movieDetailsViewController.movie = movie
         
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+    
+    func onRefresh() {
+        delay(2, closure: {
+            self.refreshControl.endRefreshing()
+        })
     }
     
 
