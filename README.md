@@ -2,7 +2,7 @@
 
 This is a movies app displaying box office and top rental DVDs using the [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs/read/JSON).
 
-Time spent: `10 hours
+Time spent: 10 hours
 
 ### Features
 
@@ -18,8 +18,12 @@ Time spent: `10 hours
 
 - [x] For the larger poster, load the low-res first and switch to high-res when complete.
 
+I should have more optionals...
+I had a surgery on Wednesday and have been typing with one hand (at least should have; it gets frustrating.)
+I guess I have an okay excuse. But I still should have done more of the optionals. Will be especially mindful about them the next assignment.
+
 ### Walkthrough
-![Video Walkthrough](http://i.imgur.com/9d4fXIm.gif)
+![Video Walkthrough](rottenTomatoes.gif)
 
 Credits
 ---------
