@@ -20,7 +20,7 @@ Time spent: 10 hours
 
 I should have more optionals...
 I had a surgery on Wednesday and have been typing with one hand (at least should have; it gets frustrating.)
-I guess I have an okay excuse. But I still should have done more of the optionals. Will be especially mindful about them the next assignment.
+I guess that's an okay excuse. But I still should have done more of the optionals. Will be especially mindful about them the next assignment.
 
 ### Walkthrough
 ![Video Walkthrough](rottenTomatoes.gif)
